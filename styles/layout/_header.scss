@@ -1,0 +1,81 @@
+.header {
+  min-height: 100vh;
+  padding-left: 5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media #{$mq-1000-down} {
+    padding: 3rem;
+  }
+
+  @media #{$mq-760-down} {
+    padding: 2rem;
+  }
+
+  @media #{$mq-620-down} {
+    padding: 1.5rem;
+  }
+
+  &::after {
+    content: "";
+    background: url("assets/images/header-background.jpeg");
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -10;
+    opacity: 0.2;
+  }
+
+  &__title {
+    width: fit-content;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 5.5rem;
+    line-height: 1;
+
+    @media #{$mq-1000-down} {
+      font-size: 4.8rem;
+    }
+
+    @media #{$mq-760-down} {
+      font-size: 4.5rem;
+    }
+
+    @media #{$mq-620-down} {
+      font-size: 4rem;
+    }
+
+    span {
+      color: rgb(228, 58, 58);
+      text-shadow: -8px 0px 2px $primary-color;
+    }
+  }
+
+  &__subtitle {
+    width: fit-content;
+    color: $secondary-color;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
+    @media #{$mq-760-down} {
+      font-size: 1.2rem;
+    }
+
+    @media #{$mq-620-down} {
+      font-size: 1rem;
+    }
+  }
+
+  &__button {
+    width: fit-content;
+    margin-top: 3rem;
+    padding: 0.9rem 3rem;
+    font-size: 1rem !important;
+    letter-spacing: 3px;
+  }
+}

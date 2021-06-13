@@ -1,0 +1,152 @@
+.nav {
+  max-width: 130px;
+  min-width: 125px;
+  min-height: 100vh;
+  background-color: $nav-bg-color;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  &.show {
+    visibility: visible;
+  }
+
+  @media #{$mq-1000-down} {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: $zIndexNavbar;
+    visibility: hidden;
+  }
+
+  &__brand {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 0;
+
+    &-logo {
+      color: rgb(228, 58, 58);
+      padding-left: 15%;
+      text-shadow: -10px 0px 2px $primary-color;
+      text-transform: uppercase;
+      font-size: 5rem;
+      font-weight: bold;
+
+      @media #{$mq-1000-down} {
+        padding-left: 3%;
+      }
+    }
+
+    &-title {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 900;
+    }
+
+    &-text {
+      color: $secondary-color;
+      margin: 1rem 0.5rem 0 0.5rem;
+      text-transform: capitalize;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__list {
+    margin: 3rem 0;
+
+    &.show {
+      visibility: visible;
+    }
+
+    &-item {
+      border-top: 1px solid $secondary-color;
+
+      &:last-child {
+        border-bottom: 1px solid $secondary-color;
+      }
+    }
+
+    &-link {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $secondary-color;
+      text-transform: capitalize;
+      font-weight: bold;
+      transition: $main-transition;
+
+      @media #{$mq-1000-down} {
+        height: 60px;
+        font-size: 1.2rem;
+      }
+
+      &:hover {
+        color: $primary-color;
+        box-shadow: inset 0 0 20px 0px #333;
+      }
+    }
+  }
+
+  &__social-list {
+    display: flex;
+    justify-content: space-evenly;
+
+    @media #{$mq-1000-down} {
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    &-link {
+      font-size: 1.3rem;
+
+      @media #{$mq-1000-down} {
+        font-size: 1.6rem;
+        margin: 0.7rem;
+      }
+
+      :hover {
+        i {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+.menu-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  z-index: $zIndexMenuIcon;
+
+  @media #{$mq-1000-up} {
+    display: none;
+  }
+
+  div {
+    width: 35px;
+    height: 5px;
+    background-color: #888;
+    margin: 6px 0;
+    transition: $main-transition;
+  }
+
+  &.transform .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  &.transform .bar2 {
+    opacity: 0;
+  }
+
+  &.transform .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+}
